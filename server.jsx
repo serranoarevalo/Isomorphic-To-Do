@@ -22,8 +22,8 @@ app.use((req, res) => {
 		if(!renderProps) return res.status(404).end('Not found');
 
 		const InitialComponent = (
-      <RoutingContext {...renderProps} />
-    );
+	      <RoutingContext {...renderProps} />
+	    );
 
 		const componentHTML = renderToString(InitialComponent);
 
