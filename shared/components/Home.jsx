@@ -1,26 +1,33 @@
-import React from 'react';
-import TodosView from 'components/TodosView';
-import TodosForm from 'components/TodosForm';
+import React, { Component , PropTypes }   from 'react';
+import TodosView              from './TodosView';
+import TodosForm              from './TodosForm';
 import { bindActionCreators } from 'redux';
-import * as TodoActions from 'actions/TodoActions';
-import { connect } from 'react-redux';
+import * as TodoActions       from 'actions/TodoActions';
+import { connect }            from 'react-redux';
 
-@connect(state => ({ todos: state.todos }))
+class Home extends Component {
+  static propTypes = {
+    todos:    PropTypes.any.isRequired,
+    dispatch: PropTypes.func.isRequired
+  };
 
-export default class Home extends React.Component {
-	render() {
-		const { todos, dispatch } = this.props;
+  static needs = [
+    TodoActions.getTodos
+  ];
 
-		console.log(todos, disptach);
-		
-		return (
-			<div id="todo-list">
-				<TodosView todos={todos}
-					{...bindActionCreators(TodoActions, dispatch)} />
+  render() {
+    const { todos, dispatch } = this.props;
 
-				<TodosForm
-					{...bindActionCreators(TodoActions, dispatch)} />
-			</div>
-		);
-	}
+    return (
+      <div id="todo-list">
+        <TodosView todos={todos}
+          {...bindActionCreators(TodoActions, dispatch)} />
+
+        <TodosForm
+          {...bindActionCreators(TodoActions, dispatch)}/>
+      </div>
+    );
+  }
 }
+
+export default connect(state => ({ todos: state.todos }))(Home)

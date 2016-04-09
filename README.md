@@ -1,2 +1,8 @@
-# Isomorphic-To-Do
-Isomorphic To Do App with React and Node
+## Isomorphic Redux Demo
+
+Basic isomorphic app built on [Redux](https://github.com/gaearon/redux)
+
+```
+$ npm run dev
+$ browser http://localhost:3000
+```

@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default class AppView extends React.Component {
-	render()  {
-		return (
-			<div id="app-view">
-				<h1> To Dos</h1>
+export default class MainView extends React.Component {
+  static propTypes = {
+    children: PropTypes.object
+  };
 
-				<hr />
+  render() {
+    return (
+      <div id="main-view">
+        <h1>Todos</h1>
 
-				{this.props.children}
-			</div>
-		);
-	}
+        <hr />
+
+        {this.props.children}
+      </div>
+    );
+  }
 }
