@@ -10,6 +10,9 @@ import { connect } from 'react-redux';
 export default class Home extends React.Component {
 	render() {
 		const { todos, dispatch } = this.props;
+
+		console.log(todos, disptach);
+		
 		return (
 			<div id="todo-list">
 				<TodosView todos={todos}

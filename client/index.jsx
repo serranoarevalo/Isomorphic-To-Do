@@ -9,7 +9,6 @@ import { fromJS } from 'immutable';
 
 let initialState = window.__INITIAL_STATE__;
 
-
 Object
 	.keys(initialState)
 	.forEach(key => {
@@ -18,6 +17,7 @@ Object
 
 const reducer = combineReducers(reducers);
 const store = createStore(reducer, initialState);
+
 
 render(
 	<Provider store={store}>

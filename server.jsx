@@ -43,7 +43,7 @@ app.use((req, res) => {
 				<meta charset="utf-8" />
 				<title>Isomorphic To Do</title>
 				<script type="application/javascript">
-					window.__INITIAL_STATE___ = ${JSON.stringify(initialState)};
+					window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
 				</script>
 			</head>
 			<body>
